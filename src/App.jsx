@@ -191,12 +191,25 @@ function Hero() {
   return (
     <section id="hero" className="hero">
       <div className="blob blob-1" /><div className="blob blob-2" /><div className="blob blob-3" />
-      <div className="eyebrow"><span className="eyebrow-dot" />Available for opportunities</div>
-      <h1 className="hero-name">Vivek M.</h1>
-      <p className="hero-role">Digital Marketing Specialist</p>
-      <p className="hero-tagline">I help brands grow through SEO,<br />performance marketing &amp; social strategy.</p>
-      <div className="hero-tags">
-        {HERO_TAGS.map((t) => <span key={t} className="htag">{t}</span>)}
+      <div className="hero-inner">
+        <div className="hero-text">
+          <div className="eyebrow"><span className="eyebrow-dot" />Available for opportunities</div>
+          <h1 className="hero-name">Vivek M.</h1>
+          <p className="hero-role">Digital Marketing Specialist</p>
+          <p className="hero-tagline">I help brands grow through SEO,<br />performance marketing &amp; social strategy.</p>
+        </div>
+        <div className="hero-photo-wrap">
+          <div className="hero-photo-ring" />
+          <div className="hero-photo-ring hero-photo-ring-2" />
+          <div className="hero-photo-glow" />
+          <img src="/vivek_image.png" alt="Vivek M." className="hero-photo" />
+          <div className="hero-photo-badge">
+            <span className="hpb-dot" />Digital Marketer
+          </div>
+          {HERO_TAGS.map((t, i) => (
+            <span key={t} className={`htag htag-orbit htag-orbit-${i}`}>{t}</span>
+          ))}
+        </div>
       </div>
       <div className="hero-stats">
         {HERO_STATS.map((s, i) => (
